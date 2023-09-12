@@ -34,7 +34,7 @@ app.get("/api", (request, response)=>{
 
   
 
-  const utcTime = getUTCDateTime();
+  
   // console.log(utcTime);
 
  
