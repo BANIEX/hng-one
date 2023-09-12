@@ -40,7 +40,12 @@ app.get("/api", (request, response)=>{
  
   
   // console.log(request.query);
-  console.log(new Date())
+
+  let inputDate = new Date();
+let inputString = inputDate.toISOString(); // Convert Date to ISO 8601 string
+let outputString = inputString.replace(/....Z$/, 'Z');
+console.log(outputString);
+
 
   let {slack_name, track} = request.query;
   // console.log(slack_name, track);
@@ -48,7 +53,7 @@ app.get("/api", (request, response)=>{
   let responseData = {
     slack_name,
     current_day: currentDay(),
-    utc_time: new Date(),
+    utc_time: outputString,
     track,
     github_file_url: "https://github.com/BANIEX/hng-one/blob/main/index.js",
     github_repo_url: "https://github.com/BANIEX/hng-one",
