@@ -45,13 +45,15 @@ app.get("/api", (request, response)=>{
   let {slack_name, track} = request.query;
   // console.log(slack_name, track);
   // console.log(currentDay())
-  let responseData = {slack_name,current_day: currentDay(), utc_time: new Date(), track, 
-    github_file_url: "",
-    github_repo_url: "",
-    status_code: 200
-
-    
-  }
+  let responseData = {
+    slack_name,
+    current_day: currentDay(),
+    utc_time: new Date(),
+    track,
+    github_file_url: "https://github.com/BANIEX/hng-one/blob/main/index.js",
+    github_repo_url: "https://github.com/BANIEX/hng-one",
+    status_code: 200,
+  };
 
   response.send(responseData);
 })
